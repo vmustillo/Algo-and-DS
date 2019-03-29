@@ -47,7 +47,7 @@ function KMPSearch(pattern, text)
         } else if (textIncrement < textLength && pattern[patternIncrement] !== text[textIncrement]) {  // mismatch after j matches
             // Do not match lps[0..lps[j-1]] characters,
             // they will match anyway
-            if ([patternIncrement] != 0)
+            if (patternIncrement !== 0)
                 patternIncrement = lps[patternIncrement - 1];
             else
                 textIncrement = textIncrement + 1;
