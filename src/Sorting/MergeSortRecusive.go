@@ -15,7 +15,7 @@ func mergeSort(arr []int) []int {
 
 // merge takes two arrays as input and sorts them into a new array.
 // Runs through both arrays comparingelements and inserting the smaller into the new array
-// Once one array has been iterated through, if there is an element left in the other array, we know it is the largest element and it can be appended to the end of the array 
+// Once one array has been iterated through, if there are any elements left in the other array, we know those elements are already sorted and can be appended to the end of the resultant array 
 func merge(leftHalf []int, rightHalf []int) []int {
 	left := 0
 	right := 0
