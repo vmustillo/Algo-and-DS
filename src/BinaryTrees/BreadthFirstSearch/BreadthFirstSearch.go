@@ -6,8 +6,8 @@ import "fmt"
 // Each leaf Node will contain a value and pointer to its left and right child leaf nodes
 type TreeNode struct {
 	Val   int
-	Right *TreeNode
-	Left  *TreeNode
+	Left *TreeNode
+	Right  *TreeNode
 }
 
 /* 
