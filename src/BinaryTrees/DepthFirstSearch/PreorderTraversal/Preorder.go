@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"bytes"
+	"strconv"
+)
 
 // Node structure will be used to create binary search tree
 // Each leaf Node will contain a value and pointer to its left and right child leaf nodes
@@ -38,6 +43,35 @@ func preorderSearch(root *Node, target int) bool {
 	return false
 }
 
+func preorderTraversal(root *Node) {
+	var visited []*Node
+	var temp *Node
+	var b bytes.Buffer
+
+	if root == nil {
+		os.Exit(1)
+	}
+
+	visited = append(visited, root)
+
+	for len(visited) > 0 {
+		temp = visited[len(visited)-1]
+		i := strconv.Itoa(temp.Val)
+		b.WriteString(i)
+		b.WriteString(",")
+
+		visited = visited[0:len(visited)-1]
+		if temp.Right != nil {
+			visited = append(visited, temp.Right)
+		}
+		if temp.Left != nil {
+			visited = append(visited, temp.Left)
+		}
+	}
+	s := b.String()
+	fmt.Println(s[0:len(s)-1])
+}
+
 func main() {
 	leaf1 := Node{2, nil, nil}
 	leaf2 := Node{5, &leaf1, nil}
@@ -56,10 +90,12 @@ func main() {
 	
 	*/
 
-	target := 6
-	if preorderSearch(&root, target) {
-		fmt.Println(target, "is in the tree! :)")
-	} else {
-		fmt.Println(target, "is not in the tree :(")
-	}
+	// target := 6
+	// if preorderSearch(&root, target) {
+	// 	fmt.Println(target, "is in the tree! :)")
+	// } else {
+	// 	fmt.Println(target, "is not in the tree :(")
+	// }
+
+	preorderTraversal(&root);
 }
