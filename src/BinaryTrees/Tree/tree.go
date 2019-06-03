@@ -1,4 +1,4 @@
-package main
+package tree
 
 import "fmt"
 
@@ -6,8 +6,13 @@ import "fmt"
 // Each leaf Node will contain a value and pointer to its left and right child leaf nodes
 type Node struct {
 	Val   int
-	Right *Node
 	Left  *Node
+	Right *Node
+}
+
+// NewNode creates a node with the value entered and nil Left and Right values
+func NewNode(val int) *Node {
+	return &Node{Val: val}
 }
 
 // Insert inserts a leaf node into a binary tree
@@ -37,22 +42,4 @@ func PrintNode(n *Node) {
 	if n.Right != nil {
 		fmt.Println("Right: ", n.Right.Val)
 	}
-}
-
-func main() {
-	root := &Node{
-		Val: 123,
-	}
-	left := &Node{
-		Val: 12,
-	}
-	right := &Node{
-		Val: 3000,
-	}
-	root.Left = left
-	root.Right = right
-	left.Insert(5)
-	PrintNode(root)
-	PrintNode(left)
-	PrintNode(right)
 }
