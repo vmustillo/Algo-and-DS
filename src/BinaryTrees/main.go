@@ -33,12 +33,15 @@ func main() {
 			16     19
 	*/
 
-	fmt.Println("Level-order traversal: ")
+	fmt.Println("Level-order traversal ")
 	tree.BFTraversal(root)
-	fmt.Println("\nPreorder traversal: ")
+	fmt.Println("\nPreorder traversal (Iteratively then Recursively): ")
 	tree.Preorder(root)
-	fmt.Println("\nInorder traversal: ")
+	tree.PreorderRecursive(root)
+	fmt.Println("\nInorder traversal (Iteratively then Recursively): ")
 	tree.Inorder(root)
-	fmt.Println("\nPostorder traversal: ")
+	tree.InorderRecursive(root)
+	fmt.Println("\nPostorder traversal (Iteratively then Recursively): ")
 	tree.Postorder(root)
+	tree.PostorderRecursive(root)
 }
