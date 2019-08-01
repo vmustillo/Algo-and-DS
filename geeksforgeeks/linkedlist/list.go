@@ -1,8 +1,24 @@
 package linkedlist
 
+import (
+	"fmt"
+	"strings"
+)
+
 type Node struct {
 	Val int
 	Next *Node
+}
+
+func PrintList(head *Node) {
+	var sb strings.Builder
+
+	for head != nil {
+		fmt.Fprintf(&sb, "%d --> ", head.Val)
+		head = head.Next
+	}
+	s := sb.String()
+	fmt.Println(s[:len(s) - 5])
 }
 
 // InsertSorted inserts num into a sorted list. Returns the head of the list

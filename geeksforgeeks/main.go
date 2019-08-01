@@ -3,9 +3,6 @@
 package main
 
 import (
-	"fmt"
-	"strings"
-
 	"github.com/vmustillo/algo-and-ds/geeksforgeeks/linkedlist"
 )
 
@@ -21,12 +18,6 @@ func main() {
 	head = linkedlist.InsertSorted(head, 7)
 	head = linkedlist.InsertSorted(head, 0)
 	head = linkedlist.InsertSorted(head, -1)
-	var sb strings.Builder
 
-	for head != nil {
-		fmt.Fprintf(&sb, "%d --> ", head.Val)
-		head = head.Next
-	}
-	s := sb.String()
-	fmt.Println(s[:len(s) - 5])
+	linkedlist.PrintList(head)
 }
