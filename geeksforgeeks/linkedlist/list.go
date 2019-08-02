@@ -62,3 +62,35 @@ func InsertSorted(head *Node, num int) *Node {
 
 	return head
 }
+
+func DeleteNode(head *Node, del *Node) {
+	if head == nil {
+		return
+	}
+
+	if head != nil && head == del {
+		if head.Next != nil {
+			n := head.Next
+			head.Val = n.Val
+			head.Next = n.Next.Next
+			n = &Node{}
+		} else {
+			fmt.Println("Cannot delete only node")
+		}
+		return
+	}
+
+	follower := head
+	head = head.Next
+
+	for head != nil {
+		if head == del {
+			follower.Next = head.Next
+			head = &Node{}
+
+			return
+		}
+		head = head.Next
+		follower = follower.Next
+	}
+}

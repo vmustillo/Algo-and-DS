@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-	empty := &linkedlist.Node{}
-	head := linkedlist.InsertSorted(empty, 1)
+	head := linkedlist.InsertSorted(nil, 1)
 	head = linkedlist.InsertSorted(head, 4)
 	head = linkedlist.InsertSorted(head, 6)
 	head = linkedlist.InsertSorted(head, 8)
@@ -20,4 +19,11 @@ func main() {
 	head = linkedlist.InsertSorted(head, -1)
 
 	linkedlist.PrintList(head)
+
+	linkedlist.DeleteNode(head, head)
+	linkedlist.PrintList(head)
+
+	n := &linkedlist.Node{2, nil}
+	linkedlist.DeleteNode(n, n)
+	linkedlist.PrintList(n)
 }
