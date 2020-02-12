@@ -31,3 +31,13 @@ func Inorder(root *Node) {
 	s := b.String()
 	fmt.Println(s[0:len(s)-1])
 }
+
+func InorderRecursive(root *Node) {
+	if root == nil {
+		return
+	}
+
+	InorderRecursive(root.Left)
+	fmt.Printf("%d,", root.Val)
+	InorderRecursive(root.Right)
+}

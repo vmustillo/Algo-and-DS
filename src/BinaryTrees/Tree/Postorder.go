@@ -36,3 +36,13 @@ func Postorder(root *Node) {
 	str := b.String()
 	fmt.Println(str[0:len(str)-1])
 }
+
+func PostorderRecursive(root *Node) {
+	if root == nil {
+		return
+	}
+
+	PostorderRecursive(root.Left)
+	PostorderRecursive(root.Right)
+	fmt.Printf("%d,", root.Val)
+}

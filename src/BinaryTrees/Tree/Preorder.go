@@ -55,3 +55,13 @@ func Preorder(root *Node) {
 	s := b.String()
 	fmt.Println(s[0:len(s)-1])
 }
+
+func PreorderRecursive(root *Node) {
+	if root == nil {
+		return
+	}
+
+	fmt.Printf("%d,", root.Val)
+	PreorderRecursive(root.Left)
+	PreorderRecursive(root.Right)
+}
