@@ -45,17 +45,17 @@ func main() {
 				16     19
 	*/
 
-	// fmt.Println("Level-order traversal ")
-	// tree.BFTraversal(root)
-	// fmt.Println("\nPreorder traversal (Iteratively then Recursively): ")
-	// tree.Preorder(root)
-	// tree.PreorderRecursive(root)
-	// fmt.Println("\nInorder traversal (Iteratively then Recursively): ")
-	// tree.Inorder(root)
-	// tree.InorderRecursive(root)
-	// fmt.Println("\nPostorder traversal (Iteratively then Recursively): ")
-	// tree.Postorder(root)
-	// tree.PostorderRecursive(root)
+	fmt.Println("Level-order traversal ")
+	tree.BFTraversal(root)
+	fmt.Println("\nPreorder traversal (Iteratively then Recursively): ")
+	tree.Preorder(root)
+	tree.PreorderRecursive(root)
+	fmt.Println("\nInorder traversal (Iteratively then Recursively): ")
+	tree.Inorder(root)
+	tree.InorderRecursive(root)
+	fmt.Println("\nPostorder traversal (Iteratively then Recursively): ")
+	tree.Postorder(root)
+	tree.PostorderRecursive(root)
 
 	if tree.IsSubtree(root, subtreeRoot) == true {
 		fmt.Println("true!")
